@@ -74,7 +74,7 @@ public class ProductoDao {
 
     public List<ProductoModel> obtenerTodosLosProductos() throws Exception {
         Connection connection = DatabaseConnection.getConnection();
-        String query = "SELECT * FROM tb_producto order by origen";
+        String query = "SELECT * FROM tb_producto order by id_producto";
 
         PreparedStatement ps = connection.prepareStatement(query);
         ResultSet rs = ps.executeQuery();
