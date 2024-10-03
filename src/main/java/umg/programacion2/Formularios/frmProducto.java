@@ -43,26 +43,19 @@ public class frmProducto extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Agregar opciones al comboBox (Origen)
-        comboBoxOrigen.addItem("Estados Unidos");
-        comboBoxOrigen.addItem("Corea del Sur");
-        comboBoxOrigen.addItem("Vietnam");
-        comboBoxOrigen.addItem("Colombia");
-        comboBoxOrigen.addItem("Italia");
-        comboBoxOrigen.addItem("Japón");
-        comboBoxOrigen.addItem("Suiza");
-        comboBoxOrigen.addItem("México");
-        comboBoxOrigen.addItem("España");
-        comboBoxOrigen.addItem("Argentina");
-        comboBoxOrigen.addItem("Noruega");
-        comboBoxOrigen.addItem("Suecia");
-        comboBoxOrigen.addItem("Francia");
-        comboBoxOrigen.addItem("Irlanda");
-        comboBoxOrigen.addItem("China");
-        comboBoxOrigen.addItem("Alemania");
-        comboBoxOrigen.addItem("Escocia");
+        //Definir las opciones en un array
 
-        //Agregar al combo box reporet
+        String[] opcionesOrigen = {
+                "Estados Unidos", "Corea del Sur", "Vietnam", "Colombia", "Italia",
+                "Japón", "Suiza", "México", "España", "Argentina",
+                "Noruega", "Suecia", "Francia", "Irlanda", "China",
+                "Alemania", "Escocia"
+        };
+
+        // Agregar opciones al comboBox (Origen)
+        for (String opcion : opcionesOrigen) {
+            comboBoxOrigen.addItem(opcion);
+        }
 
         // Definir las opciones en un array
         String[] opcionesReportes = {
@@ -230,6 +223,8 @@ public class frmProducto extends JFrame {
     private void limpiarCampos() {
         textFieldCodigo.setText("");
         textFieldNombre.setText("");
+        textFieldExistencia.setText("");
+        textFieldPrecio.setText("");
         comboBoxOrigen.setSelectedIndex(0);
     }
 
